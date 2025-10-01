@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Agentic.Commerce.Protocol</PackageId>
+    <Version>0.1.1</Version>
+    <Authors>Svix</Authors>
+    <Company>Svix</Company>
+    <Description>Type definitions for the Agentic Commerce Protocol specification</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/svix/agentic-commerce-protocol</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/svix/agentic-commerce-protocol</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>agentic-commerce;protocol;types;openai;stripe</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+</Project>
+

@@ -16,9 +16,9 @@ This is an unofficial package maintained by [Svix](https://www.svix.com). For we
 | Python     | In-progress |
 | TypeScript | In-progress |
 | Ruby       | In-progress |
+| C#         | In-progress |
 | Go         | Planned     |
 | Java       | Planned     |
-| C#         | Planned     |
 | PHP        | Planned     |
 | Kotlin     | Planned     |
 
