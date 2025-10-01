@@ -38,5 +38,5 @@ jobs:
 
       - uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          password: ${{ secrets.TWINE_PASSWORD }}
+          password: ${{ secrets.TWINE_ACP_PACKAGE_PASSWORD }}
           packages_dir: python/dist

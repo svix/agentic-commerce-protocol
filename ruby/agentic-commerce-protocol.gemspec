@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "agentic-commerce-protocol"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["Svix"]
   spec.email         = []
 
