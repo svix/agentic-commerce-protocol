@@ -1,10 +1,10 @@
-name: Python Release
+name: ACP Python Release
 
 on:
   workflow_dispatch:
   workflow_run:
     workflows:
-      - Mega Releaser
+      - ACP Mega Releaser
     types:
       - completed
 

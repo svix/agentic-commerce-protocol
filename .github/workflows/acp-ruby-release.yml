@@ -1,10 +1,10 @@
-name: Ruby Release
+name: ACP Ruby Release
 
 on:
   workflow_dispatch:
   workflow_run:
     workflows:
-      - Mega Releaser
+      - ACP Mega Releaser
     types:
       - completed
 
