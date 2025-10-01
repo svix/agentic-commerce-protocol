@@ -1,11 +1,16 @@
-name: Release
+name: Python Release
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Mega Releaser
+    types:
+      - completed
 
 jobs:
-  python:
-    name: Publish python
+  build:
+    name: Build distributions
     runs-on: ubuntu-24.04
     environment: release
 
@@ -15,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         name: Install Python
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
       - name: Install deps
         run: |
