@@ -1,0 +1,61 @@
+{% from "types/macros.rb.jinja" import deserialize_field, serialize_field -%}
+{% set class_ty = type.name | to_upper_camel_case  -%}
+# frozen_string_literal: true
+# This file is @generated
+require 'json'
+
+module AgenticCommerceProtocol
+  {% if type.description is defined -%}
+  {{ type.description | to_doc_comment(style="ruby") | indent(4) }}
+  {% endif -%}
+  class {{ class_ty }}
+    {% for field in type.fields -%}
+    {% if field.description is defined -%}
+    {{ field.description | to_doc_comment(style="ruby") }}
+    {% endif -%}
+    attr_accessor :{{ field.name | to_snake_case }}
+    {% endfor %}
+    ALL_FIELD ||= [
+      {%- for f in type.fields -%}
+      "{{ f.name | to_snake_case }}"{% if not loop.last %},{% endif %}
+      {%- endfor -%}
+    ].freeze
+    private_constant :ALL_FIELD
+
+    def initialize(attributes = {})
+      unless attributes.is_a?(Hash)
+        fail ArgumentError, "The input argument (attributes) must be a hash in `AgenticCommerceProtocol::{{ class_ty }}` new method"
+      end
+      attributes.each do |k, v|
+        unless ALL_FIELD.include? k.to_s
+          fail ArgumentError, "The field #{k} is not part of AgenticCommerceProtocol::{{ class_ty }}"
+        end
+        instance_variable_set("@#{k}", v)
+        instance_variable_set("@__#{k}_is_defined", true)
+      end
+    end
+
+    def self.deserialize(attributes = {})
+      attributes = attributes.transform_keys(&:to_s)
+      attrs = Hash.new
+      {% for field in type.fields -%}
+        {{ deserialize_field(field) -}}
+      {% endfor -%}
+      new attrs
+    end
+
+    def serialize
+      out = Hash.new
+      {% for field in type.fields -%}
+        {{ serialize_field(field) -}}
+      {% endfor -%}
+      out
+    end
+
+    # Serializes the object to a json string
+    # @return String
+    def to_json
+      JSON.dump(serialize)
+    end
+  end
+end

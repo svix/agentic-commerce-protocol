@@ -28,3 +28,14 @@ output_dir = "typescript/src/models"
 [[typescript.task]]
 template = "templates/typescript/component_type.ts.jinja"
 output_dir = "typescript/src/models"
+
+
+[ruby]
+[[ruby.task]]
+template = "templates/ruby/summary.rb.jinja"
+output_dir = "ruby/lib"
+[[ruby.task]]
+template = "templates/ruby/component_type.rb.jinja"
+output_dir = "ruby/lib/agentic_commerce_protocol/models"
+
+

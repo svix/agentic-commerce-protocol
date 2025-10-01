@@ -1,0 +1,16 @@
+# frozen_string_literal: true
+# This file is @generated
+
+
+
+# Models
+{% for type in api.types -%}
+require "agentic_commerce_protocol/models/{{ type | to_snake_case }}"
+{% endfor -%}
+
+# Core
+require "agentic_commerce_protocol/util"
+require "agentic_commerce_protocol/version"
+
+{# set the correct filename -#}
+{% do set_summary_filename("agentic_commerce_protocol.rb") -%}
