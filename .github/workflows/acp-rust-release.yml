@@ -1,18 +1,16 @@
 name: ACP Rust Release
 
 on:
-  workflow_dispatch:
-  workflow_run:
-    workflows:
-      - ACP Mega Releaser
-    types:
-      - completed
+  push:
+    branches:
+      - "mendy/acp-release"
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
+  release:
+    if: contains(github.event.head_commit.message, '[release]')
     runs-on: ubuntu-24.04
     environment: release
 
@@ -22,14 +20,6 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy, rustfmt
-
-      - uses: Swatinem/rust-cache@v2
-        with:
-          workspaces: "rust -> target"
-          # only restore cache for faster publishing, don't save back results
-          save-if: false
-          # use the cache from rust-lint/stable
-          prefix-key: "rust-client-stable"
 
       - name: Publish
         env:

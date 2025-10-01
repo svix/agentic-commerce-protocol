@@ -1,15 +1,13 @@
 name: ACP Ruby Release
 
 on:
-  workflow_dispatch:
-  workflow_run:
-    workflows:
-      - ACP Mega Releaser
-    types:
-      - completed
+  push:
+    branches:
+      - "mendy/acp-release"
 
 jobs:
-  dotnet:
+  release:
+    if: contains(github.event.head_commit.message, '[release]')
     name: Ruby Release
     runs-on: ubuntu-24.04
     environment: release
