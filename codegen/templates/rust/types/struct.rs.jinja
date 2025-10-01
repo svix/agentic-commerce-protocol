@@ -1,0 +1,17 @@
+{% from "types/macros.rs.jinja" import field_name -%}
+{% if type.name is endingwith "Patch" -%}
+    use js_option::JsOption;
+{% endif -%}
+use serde::{Deserialize, Serialize};
+
+use super::{
+    {% for c in referenced_components -%}
+        {{ c | to_snake_case }}::{{ c | to_upper_camel_case }},
+    {% endfor -%}
+};
+
+{{ doc_comment }}
+#[derive(Clone, Debug, PartialEq, Deserialize, Serialize)]
+pub struct {{ type.name | to_upper_camel_case }} {
+    {% include "types/struct_fields.rs.jinja" -%}
+}

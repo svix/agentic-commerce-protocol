@@ -1,5 +1,4 @@
 //! Agentic Commerce Protocol - Type definitions for the protocol specification.
+mod models;
 
-pub struct Placeholder {
-    pub name: String,
-}
+pub use models::*;

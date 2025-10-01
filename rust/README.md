@@ -16,7 +16,7 @@ agentic-commerce-protocol = "0.1.3"
 ## Usage
 
 ```rust
-use agentic_commerce_protocol::{CheckoutSession, Order, Product, OrderStatus};
+use agentic_commerce_protocol::{CheckoutSession, Order};
 
 // Use the types in your implementation
 ```
