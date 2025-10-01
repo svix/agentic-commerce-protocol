@@ -2,7 +2,7 @@
 Agentic Commerce Protocol - Type definitions for the protocol specification.
 """
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 from .types import Placeholder
 
