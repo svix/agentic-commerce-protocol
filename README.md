@@ -12,9 +12,9 @@ This is an unofficial package maintained by [Svix](https://www.svix.com). For we
 
 | Language   | Status      |
 |------------|-------------|
-| Rust       | Implemented |
-| Python     | Implemented |
-| TypeScript | Implemented |
+| Rust       | In-progress |
+| Python     | In-progress |
+| TypeScript | In-progress |
 | Go         | Planned     |
 | Java       | Planned     |
 | C#         | Planned     |
