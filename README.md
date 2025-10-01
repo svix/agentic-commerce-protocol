@@ -10,17 +10,17 @@ This is an unofficial package maintained by [Svix](https://www.svix.com). For we
 
 ## Language Support
 
-| Language   | Status      |
-|------------|-------------|
-| Rust       | In-progress |
-| Python     | In-progress |
-| TypeScript | In-progress |
-| Ruby       | In-progress |
-| C#         | In-progress |
-| Go         | Planned     |
-| Java       | Planned     |
-| PHP        | Planned     |
-| Kotlin     | Planned     |
+| Language              | Status  | Package url                                             |
+| --------------------- | ------- | ------------------------------------------------------- |
+| Rust                  | ✅       | https://crates.io/crates/agentic-commerce-protocol      |
+| Python                | ✅       | https://pypi.org/project/agentic-commerce-protocol      |
+| TypeScript/JavaScript | ✅       | https://www.npmjs.com/package/agentic-commerce-protocol |
+| Ruby                  | ✅       | https://rubygems.org/gems/agentic-commerce-protocol     |
+| C#                    | ✅       |                                                         |
+| Go                    | Planned |                                                         |
+| Java                  | Planned |                                                         |
+| PHP                   | Planned |                                                         |
+| Kotlin                | Planned |                                                         |
 
 ## License
 

@@ -39,3 +39,7 @@ template = "templates/ruby/component_type.rb.jinja"
 output_dir = "ruby/lib/agentic_commerce_protocol/models"
 
 
+[csharp]
+[[csharp.task]]
+template = "templates/csharp/component_type.cs.jinja"
+output_dir = "csharp/Agentic.Commerce.Protocol/Models"

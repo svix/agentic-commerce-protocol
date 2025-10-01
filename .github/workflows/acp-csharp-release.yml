@@ -23,17 +23,17 @@ jobs:
       - name: Install dependencies
         run: |
           cd csharp
-          dotnet restore
+          dotnet restore Agentic.Commerce.Protocol
 
       - name: Build
         run: |
           cd csharp
-          dotnet build --configuration Release --no-restore
+          dotnet build --configuration Release Agentic.Commerce.Protocol --no-restore
 
       - name: Release
         run: |
           cd csharp
-          dotnet nuget push "$(find bin/Release/Agentic.Commerce.Protocol.*.nupkg)" \
+          dotnet nuget push "$(find Agentic.Commerce.Protocol/bin/Release/Agentic.Commerce.Protocol.*.nupkg)" \
             --api-key "$NUGET_API_KEY" \
             --source "https://api.nuget.org/v3/index.json"
         env:

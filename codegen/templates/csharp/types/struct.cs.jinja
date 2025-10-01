@@ -1,0 +1,26 @@
+// this file is @generated
+using System.Text;
+using Newtonsoft.Json;
+
+namespace Agentic.Commerce.Protocol {
+    {%- if type.description is defined %}
+    /// <summary>
+    {{ type.description | to_doc_comment(style="csharp") | indent(4) }}
+    /// <summary>
+    {% endif %}
+    public class {{ type.name | to_upper_camel_case }}
+    {
+        {% include "types/struct_fields.cs.jinja" %}
+        public override string ToString(){
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("class {{ type.name | to_upper_camel_case }} {\n");
+            {%- for field in type.fields %}
+            sb.Append("  {{ field.name | to_upper_camel_case }}: ").Append({{ field.name | to_upper_camel_case }}).Append('\n');
+            {%- endfor %}
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+    }
+}
