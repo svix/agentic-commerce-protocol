@@ -19,3 +19,12 @@ output_dir = "python/agentic_commerce_protocol"
 [[python.task]]
 template = "templates/python/component_type.py.jinja"
 output_dir = "python/agentic_commerce_protocol/models"
+
+
+[typescript]
+[[typescript.task]]
+template = "templates/typescript/component_type_summary.ts.jinja"
+output_dir = "typescript/src/models"
+[[typescript.task]]
+template = "templates/typescript/component_type.ts.jinja"
+output_dir = "typescript/src/models"

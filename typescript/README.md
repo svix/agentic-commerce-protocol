@@ -1,4 +1,4 @@
-# Agentic Commerce Protocol - TypeScript
+# Agentic Commerce Protocol - TypeScript/JavaScript
 
 Type definitions for the [Agentic Commerce Protocol](https://developers.openai.com/commerce/guides/get-started) specification.
 
@@ -13,7 +13,7 @@ npm install agentic-commerce-protocol
 ## Usage
 
 ```typescript
-import { Placeholder } from 'agentic-commerce-protocol';
+import { CheckoutSession, Order } from 'agentic-commerce-protocol';
 
 // Use the types in your implementation
 ```
