@@ -1,0 +1,10 @@
+// package agenticcommerce this file is @generated DO NOT EDIT
+package agenticcommerce
+
+import "github.com/svix/agentic-commerce-protocol/go/models"
+
+type (
+{% for type in api.types -%}
+	{{ type | to_upper_camel_case }} =  models.{{ type | to_upper_camel_case }}
+{% endfor %}
+)

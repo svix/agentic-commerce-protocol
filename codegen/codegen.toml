@@ -43,3 +43,12 @@ output_dir = "ruby/lib/agentic_commerce_protocol/models"
 [[csharp.task]]
 template = "templates/csharp/component_type.cs.jinja"
 output_dir = "csharp/Agentic.Commerce.Protocol/Models"
+
+
+[go]
+[[go.task]]
+template = "templates/go/component_type_summary.go.jinja"
+output_dir = "go"
+[[go.task]]
+template = "templates/go/component_type.go.jinja"
+output_dir = "go/models"
