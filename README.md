@@ -15,11 +15,11 @@ This is an unofficial package maintained by [Svix](https://www.svix.com). For we
 | Rust       | In-progress |
 | Python     | In-progress |
 | TypeScript | In-progress |
+| Ruby       | In-progress |
 | Go         | Planned     |
 | Java       | Planned     |
 | C#         | Planned     |
 | PHP        | Planned     |
-| Ruby       | Planned     |
 | Kotlin     | Planned     |
 
 ## License

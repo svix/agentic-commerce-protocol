@@ -1,0 +1,40 @@
+name: Ruby Release
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Mega Releaser
+    types:
+      - completed
+
+jobs:
+  dotnet:
+    name: Ruby Release
+    runs-on: ubuntu-24.04
+    environment: release
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4.2
+
+      - name: Build
+        run: |
+          cd ruby
+          gem build
+
+      - name: Publish
+        run: |
+          mkdir -p "$HOME/.gem"
+          touch "$HOME/.gem/credentials"
+          chmod 0600 "$HOME/.gem/credentials"
+          printf -- "---\n:rubygems_api_key: %s\n" "$RUBYGEMS_AUTH_TOKEN" > "$HOME/.gem/credentials"
+
+          cd ruby
+          gem push agentic-commerce-protocol-*.gem
+        env:
+          RUBYGEMS_AUTH_TOKEN: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
