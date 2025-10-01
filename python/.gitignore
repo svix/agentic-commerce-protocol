@@ -1,1 +1,5 @@
 __pycache__/
+build/
+dist/
+.venv/
+agentic_commerce_protocol.egg-info/
