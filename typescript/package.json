@@ -1,0 +1,35 @@
+{
+  "name": "agentic-commerce-protocol",
+  "version": "0.1.0",
+  "description": "Type definitions for the Agentic Commerce Protocol specification",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "agentic-commerce",
+    "protocol",
+    "types",
+    "typescript",
+    "openai",
+    "stripe"
+  ],
+  "author": "Svix",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svix/agentic-commerce-protocol.git",
+    "directory": "typescript"
+  },
+  "homepage": "https://developers.openai.com/commerce/guides/get-started",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
+
