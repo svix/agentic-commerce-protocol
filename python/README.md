@@ -13,7 +13,7 @@ pip install agentic-commerce-protocol
 ## Usage
 
 ```python
-from agentic_commerce_protocol import CheckoutSession, Order, Product
+from agentic_commerce_protocol import CheckoutSession, Order
 
 # Use the types in your implementation
 ```

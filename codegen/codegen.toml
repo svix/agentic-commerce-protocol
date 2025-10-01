@@ -1,6 +1,7 @@
 [global]
 input_files = ["input.ron"]
 
+
 [rust]
 extra_mounts = { "rust/.rustfmt.toml" = "/app/.rustfmt.toml" }
 [[rust.task]]
@@ -9,3 +10,12 @@ output_dir = "rust/src/models"
 [[rust.task]]
 template = "templates/rust/component_type.rs.jinja"
 output_dir = "rust/src/models"
+
+
+[python]
+[[python.task]]
+template = "templates/python/component_type_summary.py.jinja"
+output_dir = "python/agentic_commerce_protocol"
+[[python.task]]
+template = "templates/python/component_type.py.jinja"
+output_dir = "python/agentic_commerce_protocol/models"
