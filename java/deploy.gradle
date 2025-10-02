@@ -1,5 +1,19 @@
-apply plugin: 'maven-publish'
-apply plugin: 'signing'
+/*
+ * Based on Stripe's java deployment, which is in turn
+ * based on the example at Chris Banes's repository that allows signing
+ * without manually creating a maven file.
+ *
+ * The original can be found at
+ * https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle
+ */
+
+apply plugin: "signing"
+apply plugin: "maven-publish"
+apply plugin: "io.github.gradle-nexus.publish-plugin"
+
+def isReleaseBuild() {
+    return VERSION_NAME.contains("SNAPSHOT") == false
+}
 
 def getReleaseRepositoryUrl() {
     return hasProperty("RELEASE_REPOSITORY_URL") ? RELEASE_REPOSITORY_URL
@@ -11,26 +25,42 @@ def getSnapshotRepositoryUrl() {
             : "https://central.sonatype.com/repository/maven-snapshots/"
 }
 
+def getRepositoryUsername() {
+    return hasProperty("NEXUS_USERNAME") ? NEXUS_USERNAME : ""
+}
+
+def getRepositoryPassword() {
+    return hasProperty("NEXUS_PASSWORD") ? NEXUS_PASSWORD : ""
+}
+
+nexusPublishing {
+    packageGroup = GROUP
+    repositories {
+        sonatype {
+            nexusUrl.set(uri(getReleaseRepositoryUrl()))
+            snapshotRepositoryUrl.set(uri(getSnapshotRepositoryUrl()))
+
+            username = getRepositoryUsername()
+            password = getRepositoryPassword()
+        }
+    }
+}
+
 publishing {
     publications {
-        mavenJava(MavenPublication) {
-            artifactId = POM_ARTIFACT_ID
+        maven(MavenPublication) {
             groupId = GROUP
             version = VERSION_NAME
 
             from components.java
-
             pom {
                 name = POM_NAME
-                packaging = 'jar'
                 description = POM_DESCRIPTION
                 url = POM_URL
 
-                scm {
-                    url = POM_SCM_URL
-                    connection = POM_SCM_CONNECTION
-                    developerConnection = POM_SCM_DEV_CONNECTION
-                }
+                groupId = GROUP
+                artifactId = POM_ARTIFACT_ID
+                version = VERSION_NAME
 
                 licenses {
                     license {
@@ -39,41 +69,29 @@ publishing {
                         distribution = POM_LICENSE_DIST
                     }
                 }
-
                 developers {
                     developer {
                         id = POM_DEVELOPER_ID
                         name = POM_DEVELOPER_NAME
+                        email = POM_DEVELOPER_EMAIL
                     }
                 }
-            }
-        }
-    }
-
-    repositories {
-        maven {
-            url = version.endsWith('SNAPSHOT') ? getSnapshotRepositoryUrl() : getReleaseRepositoryUrl()
-
-            credentials {
-                username = project.hasProperty('ossrhUsername') ? ossrhUsername : System.getenv('OSSRH_USERNAME')
-                password = project.hasProperty('ossrhPassword') ? ossrhPassword : System.getenv('OSSRH_PASSWORD')
+                scm {
+                    connection = POM_SCM_CONNECTION
+                    developerConnection = POM_SCM_DEV_CONNECTION
+                    url = POM_SCM_URL
+                }
+                organization {
+                    name = POM_DEVELOPER_NAME
+                    url = POM_ORGANIZATION_URL
+                }
             }
         }
     }
 }
 
 signing {
-    required { gradle.taskGraph.hasTask("publish") }
-    sign publishing.publications.mavenJava
-}
-
-nexusPublishing {
-    repositories {
-        sonatype {
-            nexusUrl.set(uri(getReleaseRepositoryUrl()))
-            snapshotRepositoryUrl.set(uri(getSnapshotRepositoryUrl()))
-            username = project.hasProperty('ossrhUsername') ? ossrhUsername : System.getenv('OSSRH_USERNAME')
-            password = project.hasProperty('ossrhPassword') ? ossrhPassword : System.getenv('OSSRH_PASSWORD')
-        }
-    }
+    required { !project.version.endsWith("-SNAPSHOT") && !project.hasProperty("skipSigning") }
+    useGpgCmd()
+    sign publishing.publications.maven
 }
