@@ -10,7 +10,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-agentic-commerce-protocol = "0.1.5"
+agentic-commerce-protocol = "0.1.6"
 ```
 
 ## Usage

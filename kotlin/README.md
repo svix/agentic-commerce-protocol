@@ -17,20 +17,20 @@ This is an unofficial package maintained by [Svix](https://www.svix.com). For we
 <dependency>
     <groupId>com.svix</groupId>
     <artifactId>agentic-commerce-protocol-kotlin</artifactId>
-    <version>0.1.5</version>
+    <version>0.1.6</version>
 </dependency>
 ```
 
 ### Gradle (Kotlin DSL)
 
 ```kotlin
-implementation("com.svix:agentic-commerce-protocol-kotlin:0.1.5")
+implementation("com.svix:agentic-commerce-protocol-kotlin:0.1.6")
 ```
 
 ### Gradle (Groovy)
 
 ```groovy
-implementation 'com.svix:agentic-commerce-protocol-kotlin:0.1.5'
+implementation 'com.svix:agentic-commerce-protocol-kotlin:0.1.6'
 ```
 
 ## Usage

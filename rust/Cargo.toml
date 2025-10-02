@@ -1,6 +1,6 @@
 [package]
 name = "agentic-commerce-protocol"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2021"
 authors = ["Svix"]
 description = "Type definitions for the Agentic Commerce Protocol specification"

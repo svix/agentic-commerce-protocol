@@ -16,14 +16,14 @@ This is an unofficial package maintained by [Svix](https://www.svix.com). For we
 <dependency>
     <groupId>com.svix</groupId>
     <artifactId>agentic-commerce-protocol-java</artifactId>
-    <version>0.1.5</version>
+    <version>0.1.6</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-implementation 'com.svix:agentic-commerce-protocol-java:0.1.5'
+implementation 'com.svix:agentic-commerce-protocol-java:0.1.6'
 ```
 
 ## Usage
