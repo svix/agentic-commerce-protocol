@@ -5,7 +5,7 @@
 Agentic Commerce Protocol - Type definitions for the protocol specification.
 """
 
-__version__ = "0.1.6"
+__version__ = "0.1.7"
 
 from .models.address import Address
 from .models.allowance import Allowance

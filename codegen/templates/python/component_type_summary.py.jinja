@@ -5,7 +5,7 @@
 Agentic Commerce Protocol - Type definitions for the protocol specification.
 """
 
-__version__ = "0.1.6"
+__version__ = "0.1.7"
 
 {% for type in api.types -%}
 from .models.{{ type | to_snake_case }} import {{ type | to_upper_camel_case }}

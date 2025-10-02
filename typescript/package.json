@@ -1,6 +1,6 @@
 {
   "name": "agentic-commerce-protocol",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Type definitions for the Agentic Commerce Protocol specification",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
