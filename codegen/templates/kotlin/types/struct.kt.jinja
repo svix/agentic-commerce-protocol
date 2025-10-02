@@ -1,0 +1,21 @@
+// This file is @generated
+package com.svix.agentic_commerce_protocol
+
+import com.svix.agentic_commerce_protocol.MaybeUnset
+import kotlinx.datetime.Instant
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.JsonObject
+import com.svix.agentic_commerce_protocol.StringAnyMapSerializer
+import com.svix.agentic_commerce_protocol.MaybeUnsetStringAnyMapSerializer
+
+
+
+@Serializable
+{% if type.fields | length > 0 -%}
+data class {{ type.name | to_upper_camel_case }}(
+{% include "types/struct_fields.kt.jinja" %}
+)
+{% else -%}
+data object {{ type.name | to_upper_camel_case }}
+{% endif -%}

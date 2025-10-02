@@ -17,11 +17,17 @@ This is an unofficial package maintained by [Svix](https://www.svix.com). For we
 | TypeScript/JavaScript | ✅       | https://www.npmjs.com/package/agentic-commerce-protocol |
 | Ruby                  | ✅       | https://rubygems.org/gems/agentic-commerce-protocol     |
 | C#                    | ✅       |                                                         |
-| Go                    | Planned |                                                         |
+| Go                    | ✅       |                                                         |
 | Java                  | Planned |                                                         |
-| PHP                   | Planned |                                                         |
 | Kotlin                | Planned |                                                         |
+| PHP                   | Planned |                                                         |
 
+
+<!-- 
+https://central.sonatype.com/artifact/com.svix.agentic_commerce_protocol/java   
+https://central.sonatype.com/artifact/com.svix.agentic_commerce_protocol/kotlin 
+https://pkg.go.dev/github.com/svix/agentic-commerce-protocol
+ -->
 ## License
 
 MIT

@@ -52,3 +52,16 @@ output_dir = "go"
 [[go.task]]
 template = "templates/go/component_type.go.jinja"
 output_dir = "go/models"
+
+
+[java]
+[[java.task]]
+template = "templates/java/component_type.java.jinja"
+output_dir = "java/src/main/java/com/svix/agentic_commerce_protocol"
+
+
+[kotlin]
+[[kotlin.task]]
+template = "templates/kotlin/component_type.kt.jinja"
+output_dir = "kotlin/src/main/kotlin/com/svix/agentic_commerce_protocol"
+
