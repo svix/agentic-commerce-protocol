@@ -10,17 +10,17 @@ This is an unofficial package maintained by [Svix](https://www.svix.com). For we
 
 ## Language Support
 
-| Language              | Status  | Package url                                             |
-| --------------------- | ------- | ------------------------------------------------------- |
-| Rust                  | ✅       | https://crates.io/crates/agentic-commerce-protocol      |
-| Python                | ✅       | https://pypi.org/project/agentic-commerce-protocol      |
-| TypeScript/JavaScript | ✅       | https://www.npmjs.com/package/agentic-commerce-protocol |
-| Ruby                  | ✅       | https://rubygems.org/gems/agentic-commerce-protocol     |
-| C#                    | ✅       |                                                         |
-| Go                    | ✅       |                                                         |
-| Java                  | Planned |                                                         |
-| Kotlin                | Planned |                                                         |
-| PHP                   | Planned |                                                         |
+| Language              | Status  | Package url                                                                     |
+| --------------------- | ------- | ------------------------------------------------------------------------------- |
+| Rust                  | ✅       | https://crates.io/crates/agentic-commerce-protocol                              |
+| Python                | ✅       | https://pypi.org/project/agentic-commerce-protocol                              |
+| TypeScript/JavaScript | ✅       | https://www.npmjs.com/package/agentic-commerce-protocol                         |
+| Ruby                  | ✅       | https://rubygems.org/gems/agentic-commerce-protocol                             |
+| C#                    | ✅       | Package not published yet                                                       |
+| Go                    | ✅       | https://pkg.go.dev/github.com/svix/agentic-commerce-protocol                    |
+| Java                  | ✅       | https://central.sonatype.com/artifact/com.svix/agentic-commerce-protocol-java   |
+| Kotlin                | ✅       | https://central.sonatype.com/artifact/com.svix/agentic-commerce-protocol-kotlin |
+| PHP                   | Planned |                                                                                 |
 ## License
 
 MIT
