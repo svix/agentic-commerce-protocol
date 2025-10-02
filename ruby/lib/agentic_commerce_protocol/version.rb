@@ -2,6 +2,6 @@
 # frozen_string_literal: true
 
 module AgenticCommerceProtocol
-  VERSION = "0.1.7"
+  VERSION = "0.2.0"
 end
 

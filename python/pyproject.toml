@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentic-commerce-protocol"
-version = "0.1.7"
+version = "0.2.0"
 description = "Type definitions for the Agentic Commerce Protocol specification"
 readme = "README.md"
 requires-python = ">=3.9"
