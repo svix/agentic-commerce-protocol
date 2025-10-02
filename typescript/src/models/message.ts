@@ -1,20 +1,20 @@
 // this file is @generated
-import { MessageErrorSerializer } from "./messageError";
-import { MessageInfoSerializer } from "./messageInfo";
+import { type MessageError, MessageErrorSerializer } from "./messageError";
+import { type MessageInfo, MessageInfoSerializer } from "./messageInfo";
 // biome-ignore lint/suspicious/noEmptyInterface: backwards compat
 interface _MessageFields {}
 
-interface MessageInfo {
+interface MessageVariantInfo {
   type: "info";
   data: MessageInfo;
 }
 
-interface MessageError {
+interface MessageVariantError {
   type: "error";
   data: MessageError;
 }
 
-export type Message = _MessageFields & (MessageInfo | MessageError);
+export type Message = _MessageFields & (MessageVariantInfo | MessageVariantError);
 
 export const MessageSerializer = {
   _fromJsonObject(object: any): Message {

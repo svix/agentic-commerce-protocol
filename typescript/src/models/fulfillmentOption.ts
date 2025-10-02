@@ -1,21 +1,27 @@
 // this file is @generated
-import { FulfillmentOptionDigitalSerializer } from "./fulfillmentOptionDigital";
-import { FulfillmentOptionShippingSerializer } from "./fulfillmentOptionShipping";
+import {
+  type FulfillmentOptionDigital,
+  FulfillmentOptionDigitalSerializer,
+} from "./fulfillmentOptionDigital";
+import {
+  type FulfillmentOptionShipping,
+  FulfillmentOptionShippingSerializer,
+} from "./fulfillmentOptionShipping";
 // biome-ignore lint/suspicious/noEmptyInterface: backwards compat
 interface _FulfillmentOptionFields {}
 
-interface FulfillmentOptionShipping {
+interface FulfillmentOptionVariantShipping {
   type: "shipping";
   data: FulfillmentOptionShipping;
 }
 
-interface FulfillmentOptionDigital {
+interface FulfillmentOptionVariantDigital {
   type: "digital";
   data: FulfillmentOptionDigital;
 }
 
 export type FulfillmentOption = _FulfillmentOptionFields &
-  (FulfillmentOptionShipping | FulfillmentOptionDigital);
+  (FulfillmentOptionVariantShipping | FulfillmentOptionVariantDigital);
 
 export const FulfillmentOptionSerializer = {
   _fromJsonObject(object: any): FulfillmentOption {

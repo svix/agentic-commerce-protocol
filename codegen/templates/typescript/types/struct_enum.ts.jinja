@@ -25,7 +25,7 @@ interface {{ type_name }}{{ variant.name | to_upper_camel_case }}{{ type.content
 {% endfor %}
 
 {% for variant in type.variants %}
-interface {{ type_name }}{{ variant.name | to_upper_camel_case }} {
+interface {{ type_name }}Variant{{ variant.name | to_upper_camel_case }} {
     {{ disc_field_name }}: '{{ variant.name }}';
     {% if variant.schema_ref is defined -%}
     {{ content_field_name }}: {{ variant.schema_ref | to_upper_camel_case }};
@@ -38,7 +38,7 @@ interface {{ type_name }}{{ variant.name | to_upper_camel_case }} {
 {{ doc_comment }}
 export type {{ type_name }} = _{{ type_name }}Fields & (
     {%- for variant in type.variants -%}
-        | {{ type_name }}{{ variant.name | to_upper_camel_case }}
+        | {{ type_name }}Variant{{ variant.name | to_upper_camel_case }}
     {% endfor -%}
 );
 
