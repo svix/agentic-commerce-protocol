@@ -2,9 +2,9 @@ name: ACP Python Release
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - "mendy/acp-release"
+  push:
+    branches:
+      - "mendy/acp-release"
 
 jobs:
   release:
