@@ -1,0 +1,79 @@
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+def getReleaseRepositoryUrl() {
+    return hasProperty("RELEASE_REPOSITORY_URL") ? RELEASE_REPOSITORY_URL
+            : "https://ossrh-staging-api.central.sonatype.com/service/local/"
+}
+
+def getSnapshotRepositoryUrl() {
+    return hasProperty("SNAPSHOT_REPOSITORY_URL") ? SNAPSHOT_REPOSITORY_URL
+            : "https://central.sonatype.com/repository/maven-snapshots/"
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = POM_ARTIFACT_ID
+            groupId = GROUP
+            version = VERSION_NAME
+
+            from components.java
+
+            pom {
+                name = POM_NAME
+                packaging = 'jar'
+                description = POM_DESCRIPTION
+                url = POM_URL
+
+                scm {
+                    url = POM_SCM_URL
+                    connection = POM_SCM_CONNECTION
+                    developerConnection = POM_SCM_DEV_CONNECTION
+                }
+
+                licenses {
+                    license {
+                        name = POM_LICENSE_NAME
+                        url = POM_LICENSE_URL
+                        distribution = POM_LICENSE_DIST
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = POM_DEVELOPER_ID
+                        name = POM_DEVELOPER_NAME
+                    }
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            url = version.endsWith('SNAPSHOT') ? getSnapshotRepositoryUrl() : getReleaseRepositoryUrl()
+
+            credentials {
+                username = project.hasProperty('ossrhUsername') ? ossrhUsername : System.getenv('OSSRH_USERNAME')
+                password = project.hasProperty('ossrhPassword') ? ossrhPassword : System.getenv('OSSRH_PASSWORD')
+            }
+        }
+    }
+}
+
+signing {
+    required { gradle.taskGraph.hasTask("publish") }
+    sign publishing.publications.mavenJava
+}
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            nexusUrl.set(uri(getReleaseRepositoryUrl()))
+            snapshotRepositoryUrl.set(uri(getSnapshotRepositoryUrl()))
+            username = project.hasProperty('ossrhUsername') ? ossrhUsername : System.getenv('OSSRH_USERNAME')
+            password = project.hasProperty('ossrhPassword') ? ossrhPassword : System.getenv('OSSRH_PASSWORD')
+        }
+    }
+}

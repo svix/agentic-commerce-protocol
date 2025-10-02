@@ -1,0 +1,42 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
+    id "io.github.gradle-nexus.publish-plugin" version "1.1.0"
+}
+
+group = GROUP
+version = VERSION_NAME
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+    withJavadocJar()
+    withSourcesJar()
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "com.fasterxml.jackson.core:jackson-core:2.18.2"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.18.2"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.18.2"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:2.18.2"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.18.2"
+    implementation "com.google.code.findbugs:jsr305:3.0.2"
+
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.36'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+apply from: "deploy.gradle"
+
