@@ -21,13 +21,6 @@ This is an unofficial package maintained by [Svix](https://www.svix.com). For we
 | Java                  | Planned |                                                         |
 | Kotlin                | Planned |                                                         |
 | PHP                   | Planned |                                                         |
-
-
-<!-- 
-https://central.sonatype.com/artifact/com.svix.agentic_commerce_protocol/java   
-https://central.sonatype.com/artifact/com.svix.agentic_commerce_protocol/kotlin 
-https://pkg.go.dev/github.com/svix/agentic-commerce-protocol
- -->
 ## License
 
 MIT

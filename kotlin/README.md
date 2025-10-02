@@ -15,8 +15,8 @@ This is an unofficial package maintained by [Svix](https://www.svix.com). For we
 
 ```xml
 <dependency>
-    <groupId>com.svix.agentic_commerce_protocol</groupId>
-    <artifactId>kotlin</artifactId>
+    <groupId>com.svix</groupId>
+    <artifactId>agentic-commerce-protocol-kotlin</artifactId>
     <version>0.1.4</version>
 </dependency>
 ```
@@ -24,13 +24,13 @@ This is an unofficial package maintained by [Svix](https://www.svix.com). For we
 ### Gradle (Kotlin DSL)
 
 ```kotlin
-implementation("com.svix.agentic_commerce_protocol:kotlin:0.1.4")
+implementation("com.svix:agentic-commerce-protocol-kotlin:0.1.4")
 ```
 
 ### Gradle (Groovy)
 
 ```groovy
-implementation 'com.svix.agentic_commerce_protocol:kotlin:0.1.4'
+implementation 'com.svix:agentic-commerce-protocol-kotlin:0.1.4'
 ```
 
 ## Usage
